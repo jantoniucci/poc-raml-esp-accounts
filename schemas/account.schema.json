@@ -10,6 +10,9 @@
     "publicId": {
       "type": "string"
     },
+    "favorite": {
+      "type": "string"
+    },
     "alias": {
       "type": "string"
     },
