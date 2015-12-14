@@ -1,0 +1,50 @@
+#%RAML 0.8
+---
+title: Accounts
+baseUri: http://accounts.demo/api
+version: v0.1
+
+schemas:
+
+ - amount: !include core/schemas/amount.schema.json
+ - errorMessage: !include core/schemas/errorMessage.schema.json
+ - responseMessage: !include core/schemas/responseMessage.schema.json
+ - fieldValidationError: !include core/schemas/fieldValidationError.schema.json
+
+ - account: !include schemas/account.schema.json
+ - accounts: !include schemas/accounts.schema.json
+
+resourceTypes:
+  - !include core/resourceTypes/readOnlyCollection.yaml
+  - !include core/resourceTypes/readOnlyCollection-item.yaml
+
+traits:
+  - !include core/traits/searchable.yaml
+  - !include core/traits/orderable.yaml
+  - !include core/traits/pageable.yaml
+  - !include core/traits/validable.yaml
+
+securitySchemes:
+  - !include core/securitySchemes/x-access-token.yaml
+
+securedBy: [x-access-token]
+
+/accounts:
+  is: [
+    searchable: {
+      description: "with valid searchable fields: IBAN, balance, description",
+      example: "[{\"publicId\", \"0182\", \"like\"},{\"balance\", 1000.0, \"gte\"}]"
+    },
+    orderable: {
+      fieldsList: "alias, description, balance"
+    },
+    pageable
+  ]
+  type:
+    readOnlyCollection:
+      exampleCollection: !include examples/accounts.json
+  get:
+  /{accountId}:
+    type:
+      readOnlyCollection-item:
+        exampleItem: !include examples/account.json

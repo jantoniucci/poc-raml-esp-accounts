@@ -1,0 +1,62 @@
+collection-item:
+  description: Entity representing a <<resourcePathName|!singularize>>
+  get:
+    description: |
+      Get the <<resourcePathName|!singularize>>
+      with <<resourcePathName|!singularize>>Id =
+      {<<resourcePathName|!singularize>>Id}
+    responses:
+      200:
+        body:
+          application/json:
+            schema: <<resourcePathName|!singularize>>
+            example: |
+              <<exampleItem>>
+      404:
+        body:
+          application/json:
+            schema: errorMessage
+            example: |
+              {"message": "<<resourcePathName|!singularize>> not found" }
+  post:
+    description: |
+      Create a new <<resourcePathName|!singularize>>
+    body:
+      application/json:
+        schema: <<resourcePathName|!singularize>>
+        example: |
+          <<exampleItem>>
+    responses:
+      201:
+        body:
+          application/json:
+            schema: <<resourcePathName|!singularize>>
+            example: |
+              <<exampleItem>>
+  put:
+    description: |
+      Update a <<resourcePathName|!singularize>>
+    body:
+      application/json:
+        schema: <<resourcePathName|!singularize>>
+        example: |
+          <<exampleItem>>
+    responses:
+      200:
+        body:
+          application/json:
+            schema: <<resourcePathName|!singularize>>
+            example: |
+              <<exampleItem>>
+  delete:
+    description: |
+       Delete the <<resourcePathName|!singularize>>
+       with <<resourcePathName|!singularize>>Id =
+       {<<resourcePathName|!singularize>>Id}
+    responses:
+      200:
+        body:
+          application/json:
+            schema: responseMessage
+            example: |
+              {"message" : "OK"}
