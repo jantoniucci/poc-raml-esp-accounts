@@ -7,7 +7,8 @@
       "amount": "3200,23",
       "currency": "EUR"
     },
-    "description": "Description for account c1"
+    "description": "Description for account c1",
+    "userNotes": "Mis notas 1"
   },
   {
     "accountId": "550e8400-e29b-41d4-a716-446655440111",
@@ -17,7 +18,8 @@
       "amount": "210.000,50",
       "currency": "EUR"
     },
-    "description": "Description for account c2"
+    "description": "Description for account c2",
+    "userNotes": "Mis notas 2"
   }
 
 ]

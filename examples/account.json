@@ -7,5 +7,6 @@
       "amount": "3200,23",
       "currency": "EUR"
     },
-    "description": "Description for account c1"
+    "description": "Description for account c1",
+    "userNotes": "Mis notas"
 }

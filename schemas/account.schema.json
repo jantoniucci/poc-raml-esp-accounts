@@ -21,6 +21,9 @@
     },
     "description": {
       "type": "string"
+    },
+    "userNotes": {
+      "type": "string"
     }
   }
 }
